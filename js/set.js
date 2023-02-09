@@ -20,6 +20,12 @@ function getBgImg() {
     }
 }
 
+var bg_img_preinstall = {
+    "type": "4", // 1:默认背景 2:每日一图 3:随机风景 4:随机动漫
+    "path": "", //自定义图片
+};
+
+
 // 更改背景图片
 function setBgImgInit() {
     var bg_img = getBgImg();
@@ -28,7 +34,7 @@ function setBgImgInit() {
     switch (bg_img["type"]) {
         case "1":
             var pictures = new Array();
-            pictures[0] = './img/background1.webp';
+           
             var rd = Math.floor(Math.random() * 10);
             $('#bg').attr('src', pictures[rd]) //随机默认壁纸
             break;
@@ -56,9 +62,9 @@ $(document).ready(function () {
         if (type === "1") {
             setBgImg(bg_img);
             var pictures = new Array();
-            pictures[0] = './img/background1.webp';
+  
             var rd = Math.floor(Math.random() * 10);
-            $('#bg').attr('src', pictures[0]) //随机默认壁纸
+            $('#bg').attr('src', pictures[rd]) //随机默认壁纸
             iziToast.show({
                 message: '壁纸设置成功',
             });
