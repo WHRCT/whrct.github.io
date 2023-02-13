@@ -96,13 +96,9 @@ fetch('https://v1.hitokoto.cn?max_length=24')
 fetch('http://www.lpv4.cn:10000/api/weather/?city=%E9%87%8D%E5%BA%86')
     .then(response => response.json())
     .then(data => {
-        $('#wea_text').html(data.wea)
+        $('#wea_text').html(data.type)
         $('#city_text').html(data.city)
-        $('#tem_night').html(data.tem_night)
-        $('#tem_day').html(data.tem_day)
-        // $('#win_text').html(data.win)
-        // $('#win_speed').html(data.win_speed)
-    })
+ })
     .catch(console.error)
 
 //获取时间
