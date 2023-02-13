@@ -93,12 +93,16 @@ fetch('https://v1.hitokoto.cn?max_length=24')
 //获取天气
 //每日限量 100 次
 //请前往 https://www.tianqiapi.com/ 申请（免费）
-fetch('http://www.lpv4.cn:10000/api/weather/?city=%E9%87%8D%E5%BA%86')
+fetch('https://www.yiketianqi.com/free/day?appid=43986679&appsecret=TksqGZT7&unescape=1')
     .then(response => response.json())
     .then(data => {
-        $('#wea_text').html(data.type)
+        $('#wea_text').html(data.wea)
         $('#city_text').html(data.city)
- })
+        $('#tem_night').html(data.tem_night)
+        $('#tem_day').html(data.tem_day)
+        // $('#win_text').html(data.win)
+        // $('#win_speed').html(data.win_speed)
+    })
     .catch(console.error)
 
 //获取时间
